@@ -1,0 +1,22 @@
+---
+
+- name: General Config
+
+  hosts: routers
+
+  tasks:
+
+  - name: Add Banner
+
+    ios_banner:
+      banner: login
+      text: |
+        O Cafe com ip tem o melhor
+        conteudo.
+      state: present
+
+  - name: Add loopback
+
+    ios_interface:
+      name: Loopback21
+      state: present 
